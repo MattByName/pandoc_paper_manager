@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp /etc/pandoc_paper_manager/project.config .
+cp /etc/pandoc_paper_manager/init.sh .
+cp /etc/pandoc_paper_manager/make.sh .
+
