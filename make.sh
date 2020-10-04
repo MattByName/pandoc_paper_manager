@@ -8,12 +8,14 @@ rm -f $PERFORMANCE_FILE
 rm -f $SLIDES_REVEAL_FILE
 rm -f $SLIDES_PDF_FILE
 rm -f $DOC_FILE
+rm -f $PPT_FILE
 echo $REFERENCE_DOC
 mkdir -p $EXPORT_FOLDER
 
 # Make Normal
 pandoc $SRC_FILE --pdf-engine=xelatex -V papersize:a4 -o $NORMAL_FILE
 pandoc $SRC_FILE --reference-doc $REFERENCE_DOC -V papersize:a4 -o $DOC_FILE
+pandoc $SRC_FILE_SLIDES --reference-doc $REFERENCE_PPT -o $PPT_FILE
 cp -f $NORMAL_FILE $EXPORT_FOLDER
 cp -f $DOC_FILE $EXPORT_FOLDER
 # Make Performance
@@ -31,7 +33,6 @@ pandoc -t revealjs -V revealjs-url=./reveal.js -V theme=beige-matt -V margin-0.1
 cp -f $SLIDES_REVEAL_FILE $EXPORT_FOLDER
 
 #V margin=0 -V minScale=1 -V maxScale=1 -V  
-
 
 
 
